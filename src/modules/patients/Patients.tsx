@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import MainLayout from "../../layouts/MainLayout";
 import { usePatientStore } from "../../store/patientStore";
 import PatientCard from "../../components/patients/PatientCard";
-import { Pencil, Trash2 } from "lucide-react";
+
 
 export default function Patients() {
   const { patients, addPatient, deletePatient, updatePatient } =
