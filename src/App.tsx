@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Loader from "./components/ui/Loader";
 
-// 🔥 Lazy load pages
+//Lazy load pages
 const Login = lazy(() => import("./modules/auth/Login"));
 const Dashboard = lazy(() => import("./modules/dashboard/Dashboard"));
 const Patients = lazy(() => import("./modules/patients/Patients"));

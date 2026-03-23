@@ -115,7 +115,6 @@ export default function MainLayout({ children }: any) {
           </div>
         </div>
 
-        {/* OVERLAY */}
         {open && (
           <div
             className="fixed inset-0 bg-black/40 md:hidden"
@@ -123,7 +122,7 @@ export default function MainLayout({ children }: any) {
           />
         )}
 
-        {/* MAIN CONTENT (FIXED) */}
+
         <div className="flex-1 w-full md:ml-0 p-4 md:p-6">
           {children}
         </div>

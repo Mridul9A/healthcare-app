@@ -22,7 +22,7 @@ export default function Dashboard() {
           <Card title="Warning 🟡" value={warning} color="text-yellow-500" />
         </div>
 
-        {/* ALERT LIST */}
+
         <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow">
           <h2 className="font-semibold mb-3">Recent Alerts</h2>
 
