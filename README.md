@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# Healthcare SaaS Dashboard
+A modern, responsive B2B healthcare dashboard built using React, TypeScript, and Zustand. This project
+demonstrates scalable frontend architecture, real-world UI/UX patterns, and performance optimizations.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Demo & Credentials
+Demo Link: [[healthcare-app](https://healthcare-app-pi-livid.vercel.app/)]
 
-Currently, two official plugins are available:
+Email: test@test.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Password: 123456
 
-## React Compiler
+## Key Features
+### Secure Authentication
+Integrated Firebase Auth with protected route guards.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Persistent login sessions and secure logout flows.
 
-## Expanding the ESLint configuration
+### Patient Management (CRUD)
+Full Create, Read, Update, and Delete capabilities.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Advanced search & filtering with debounced inputs.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Toggleable Grid and List views with pagination.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Medical Analytics
+Interactive data visualization using Recharts.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Distribution analysis for patient demographics and disease prevalence.
+
+### Modern UI/UX
+Dark/Light Mode support with system preference detection.
+
+Fully responsive layout (Mobile-first approach).
+
+Browser notifications via Service Workers.
+
+### Tech Stack
+Core: React 18 (Vite), TypeScript
+
+State Management: Zustand (with Middleware Persistence)
+
+Styling: Tailwind CSS
+
+Charts: Recharts
+
+Backend/Auth: Firebase
+
+Icons: Lucide React 
+
+## Architecture & Decisions
+Feature-Based Folder Structure
+The project follows a modular architecture to ensure scalability as the application grows:
+```
+src/
+├── components/ # Shared UI atoms (Buttons, Inputs, Modals)
+├── layouts/    # Wrapper components (Sidebar, Navbar)
+├── modules/    # Feature-specific logic (Patients, Analytics, Auth)
+├── store/      # Zustand store slices
+├── hooks/      # Reusable custom hooks (useDebounce, useTheme)
+└── services/   # Firebase config and API logic
+``` 
+
+## Performance Optimizations
+Route-based Code Splitting: Using React.lazy to reduce initial bundle size.
+
+Memoization: Strategic use of useMemo and useCallback for expensive chart calculations.
+
+State Efficiency: Zustand used over Redux for lower boilerplate and faster execution.
+
+# Getting Started
+Prerequisites
+* Node.js (v18+)
+
+* npm or yarn
+
+Installation
+1. Clone the repository
+```
+git clone https://github.com/Mridul9A/healthcare-app.git
+cd healthcare-app
+```
+2. Install dependencies
+```
+npm install
+```
+3. Environment Setup
+Create a .env file in the root directory and add your Firebase credentials:
+```
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4. Run Development Server
+``` 
+npm run dev
 ```
+
+# Author
+Mridul
+
+LinkedIn: [[Mridul](https://www.linkedin.com/in/mridul09/) ]
