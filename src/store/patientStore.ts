@@ -12,6 +12,8 @@ type PatientStore = {
   patients: Patient[];
   addPatient: (p: Patient) => void;
   deletePatient: (id: number) => void;
+  // 1. Add this line to the type definition
+  updatePatient: (p: Patient) => void; 
 };
 
 export const usePatientStore = create<PatientStore>()(
@@ -27,6 +29,14 @@ export const usePatientStore = create<PatientStore>()(
       deletePatient: (id) =>
         set((state) => ({
           patients: state.patients.filter((p) => p.id !== id),
+        })),
+
+      // 2. Add the implementation logic here
+      updatePatient: (updatedPatient) =>
+        set((state) => ({
+          patients: state.patients.map((p) =>
+            p.id === updatedPatient.id ? updatedPatient : p
+          ),
         })),
     }),
     {
